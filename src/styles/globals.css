@@ -1,0 +1,88 @@
+/* Both themes */
+:root {
+  /* Colors */
+  --light-color: hsl(240, 11%, 84%);
+  --alt-light-color: hsl(220, 21%, 89%);
+  --dark-color: hsl(223, 16%, 9%);
+  --alt-dark-color: hsl(227, 21%, 13%);
+
+  /* Font Sizes */
+  --font-size-xl: clamp(2.44rem, 2vw + 1.5rem, 3.75rem);
+  --font-size-lg: clamp(1.2rem, 1.5vw + 1.1rem, 2rem);
+  --font-size-base: clamp(1rem, 0.15vw + 0.70rem, 1.20rem);
+  --font-size-small: 75%;
+
+  --text-bold: 700;
+
+  /* Measurements */
+  --gap: 0.5em;
+  --max-width: 990px;
+  --border-radius: 3px;
+  --bordered: 1px solid;
+
+  /* Transitions and Animations */
+  --transition-duration: .10s;
+  --transition-timing-function: linear;
+}
+
+/* Light theme */
+:root {
+  --main-color-light-theme: hsl(0, 88%, 54%);
+  --border-color-light-theme: hsla(0, 0%, 65%, 0.5);
+}
+
+/* Dark theme */
+:root {
+  --main-color-dark-theme: hsl(0, 95%, 60%);
+  --border-color-dark-theme: hsla(0, 0%, 25%, 0.5);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --main-color: var(--main-color-dark-theme);
+    --background-color: var(--dark-color);
+    --alt-background-color: var(--alt-dark-color);
+    --foreground-color: var(--light-color);
+    --alt-foreground-color: var(--alt-light-color);
+    --border-color: var(--border-color-dark-theme);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --main-color: var(--main-color-light-theme);
+    --background-color: var(--light-color);
+    --alt-background-color: var(--alt-light-color);
+    --foreground-color: var(--dark-color);
+    --alt-foreground-color: var(--alt-dark-color);
+    --border-color: var(--border-color-light-theme);
+  }
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  max-width: var(--max-width);
+  color: var(--foreground-color);
+  background-color: var(--background-color);
+  font-family: system-ui, sans-serif;
+  font-size: var(--font-size-base);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
